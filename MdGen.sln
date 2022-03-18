@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{68CE2084-004E-46D8-B4A5-934FC65C5BF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdGen.Core", "src\MdGen.Core\MdGen.Core.csproj", "{B9EA8662-CFF7-4F0E-9979-B35BD92F5E92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdGen.Api", "src\MdGen.Api\MdGen.Api.csproj", "{B9EA8662-CFF7-4F0E-9979-B35BD92F5E92}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AB1ACE57-A73C-4F8C-A664-FFFED6CD862C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdGen.Core.Tests", "test\MdGen.Core.Tests\MdGen.Core.Tests.csproj", "{A1719E74-27A0-4891-8C98-3D2F12C4FC82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdGen.Api.Tests", "test\MdGen.Api.Tests\MdGen.Api.Tests.csproj", "{A1719E74-27A0-4891-8C98-3D2F12C4FC82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
