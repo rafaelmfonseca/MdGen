@@ -10,5 +10,5 @@ public interface IMdTweetConverter
     /// <param name="data">The data to convert.</param>
     /// <param name="firstTweetId">The first tweed id.</param>
     /// <returns>Lists of tweets in order.</returns>
-    IEnumerable<MdTweetModel> Convert(object data, string firstTweetId);
+    IList<MdTweetModel> Convert(object data, string firstTweetId);
 }

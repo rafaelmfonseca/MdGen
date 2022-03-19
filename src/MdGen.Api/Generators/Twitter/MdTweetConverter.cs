@@ -17,7 +17,7 @@ public class MdTweetConverter : IMdTweetConverter
     }
 
     /// <inheritdoc />
-    IEnumerable<MdTweetModel> IMdTweetConverter.Convert(object data, string firstTweetId)
+    IList<MdTweetModel> IMdTweetConverter.Convert(object data, string firstTweetId)
     {
         if (data is IList<TweetV2> tweets)
         {

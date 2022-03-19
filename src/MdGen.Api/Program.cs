@@ -1,6 +1,8 @@
 ﻿using Tweetinvi;
 using Tweetinvi.Models;
 using MdGen.Api.Filters;
+using MdGen.Api.Generators.Markdown;
+using MdGen.Api.Generators.Markdown.Abstractions;
 using MdGen.Api.Generators.Twitter;
 using MdGen.Api.Generators.Twitter.Abstractions;
 
@@ -23,6 +25,8 @@ builder.Services.AddScoped<ITwitterClient>((serviceProvider) =>
 builder.Services.AddScoped<ITwitterThreadMdGenerator, TwitterThreadMdGenerator>();
 builder.Services.AddScoped<ITweetIdExtractor, TweetUrlIdExtractor>();
 builder.Services.AddScoped<IMdTweetConverter, MdTweetConverter>();
+builder.Services.AddScoped<IMarkdownGenerator, MarkdownGenerator>();
+builder.Services.AddScoped<IMarkdownFormatter, MarkdownFormatter>();
 builder.Services.AddControllers(options => options.Filters.Add(typeof(ApiExceptionFilterAttribute)));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
