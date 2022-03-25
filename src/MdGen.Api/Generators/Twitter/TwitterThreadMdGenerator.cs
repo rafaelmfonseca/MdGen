@@ -3,6 +3,7 @@ using Tweetinvi.Models.V2;
 using Tweetinvi.Parameters.V2;
 using MdGen.Api.Generators.Twitter.Exceptions;
 using MdGen.Api.Generators.Twitter.Abstractions;
+using MdGen.Api.Generators.Markdown.Abstractions;
 
 namespace MdGen.Api.Generators.Twitter;
 
@@ -11,15 +12,18 @@ public class TwitterThreadMdGenerator : ITwitterThreadMdGenerator
     private readonly ITwitterClient _twitterClient;
     private readonly ITweetIdExtractor _tweetIdExtractor;
     private readonly IMdTweetConverter _mdTweetConverter;
+    private readonly IMarkdownParser _markdownParser;
 
     public TwitterThreadMdGenerator(
         ITwitterClient twitterClient,
         ITweetIdExtractor tweetIdExtractor,
-        IMdTweetConverter mdTweetConverter)
+        IMdTweetConverter mdTweetConverter,
+        IMarkdownParser markdownParser)
     {
         _twitterClient = twitterClient;
         _tweetIdExtractor = tweetIdExtractor;
         _mdTweetConverter = mdTweetConverter;
+        _markdownParser = markdownParser;
     }
 
     /// <inheritdoc />
@@ -57,6 +61,8 @@ public class TwitterThreadMdGenerator : ITwitterThreadMdGenerator
 
         var mdTweets = _mdTweetConverter.Convert(tweets, tweetId);
 
-        return string.Join(Environment.NewLine, mdTweets.Select(t => t.Text));
+        var markdown = _markdownParser.Parse(mdTweets);
+
+        return markdown.ToString();
     }
 }

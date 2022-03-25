@@ -52,4 +52,8 @@ public class MarkdownGenerator : IMarkdownGenerator
     /// <inheritdoc />
     void IMarkdownGenerator.Text(string content)
         => _stringBuilder.Append(_markdownFormatter.Text(content));
+
+    /// <inheritdoc />
+    public override string ToString()
+        => _stringBuilder.ToString();
 }

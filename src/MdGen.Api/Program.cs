@@ -27,6 +27,7 @@ builder.Services.AddScoped<ITweetIdExtractor, TweetUrlIdExtractor>();
 builder.Services.AddScoped<IMdTweetConverter, MdTweetConverter>();
 builder.Services.AddScoped<IMarkdownGenerator, MarkdownGenerator>();
 builder.Services.AddScoped<IMarkdownFormatter, MarkdownFormatter>();
+builder.Services.AddTransient<IMarkdownParser, MarkdownParser>();
 builder.Services.AddControllers(options => options.Filters.Add(typeof(ApiExceptionFilterAttribute)));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
